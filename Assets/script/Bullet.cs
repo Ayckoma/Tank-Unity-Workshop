@@ -1,25 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Bullet : MonoBehaviour
 {
     public float VitesseLancer = 75.0f;
+    public float delaiEntreTirs = 0.5f; 
+    private float tempsDernierTir;
+
     public GameObject objectPrefab;
 
     void Start()
     {
-        
+        tempsDernierTir = -delaiEntreTirs; 
     }
 
-    
-    void Update()
+    public void Inputshoot(InputAction.CallbackContext context)
     {
-        if(Input.GetKeyDown("space"))
+        
+        if (Time.time - tempsDernierTir >= delaiEntreTirs)
         {
             SpawnObj();
+            tempsDernierTir = Time.time; 
         }
     }
+
     void SpawnObj()
     {
         Vector3 SpawnPosition = transform.position;
@@ -34,3 +38,5 @@ public class Bullet : MonoBehaviour
         rb.velocity = velocity;
     }
 }
+
+

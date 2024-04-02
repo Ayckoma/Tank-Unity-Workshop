@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class mouv : MonoBehaviour
 {
@@ -23,11 +24,19 @@ public class mouv : MonoBehaviour
     
     void Update()
     {
-        MoveInputs = Input.GetAxis("Vertical");
-        RotationInputs = Input.GetAxis("Horizontal");
-
         RotationRoues(MoveInputs, RotationInputs);
     }
+
+    public void rouler(InputAction.CallbackContext context)
+    {
+        MoveInputs =  context.ReadValue<float>();
+    }
+    
+    public void tourner(InputAction.CallbackContext context)
+    {
+        RotationInputs = context.ReadValue<float>();
+    }
+
     void FixedUpdate()
     {
         MoveTankObg(MoveInputs);

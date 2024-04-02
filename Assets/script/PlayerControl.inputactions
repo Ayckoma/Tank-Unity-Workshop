@@ -15,10 +15,28 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "tourelle",
+                    "type": "Value",
+                    "id": "b9e4eb47-af36-47c8-bd36-28e5fe5d209c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "mouvement",
+                    "type": "Value",
+                    "id": "6cec2e54-8ab4-4ecd-ac43-1f5876852d08",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "tourner",
                     "type": "Value",
-                    "id": "43fa47bc-abfa-4415-8604-f147c6a1a242",
-                    "expectedControlType": "",
+                    "id": "b911cf35-c510-44aa-a7a7-05ad7e4b1a3a",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -27,12 +45,122 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "84c9719a-9616-4101-99e8-e5173b419371",
-                    "path": "<Mouse>/leftButton",
+                    "id": "a0683399-5beb-4c9d-b11c-a97010b28157",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39b9e1cf-8923-4f60-acca-32580058cb00",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "rouler",
+                    "id": "861027b1-be1f-47d5-9c4b-e9f15f9aca41",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mouvement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "355ef40a-8bb7-42d0-a413-6494715ca2af",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mouvement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "0aca68b2-deba-4baf-9d6f-44810c582e2c",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mouvement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5e2dd79c-8023-4bb2-a326-74f1230c4f89",
+                    "path": "<Gamepad>/leftStick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mouvement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "tourner",
+                    "id": "51bf887b-3309-470a-9bb4-2bf5864a401e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "tourner",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "51f9a4da-133a-44f3-bcde-bb57300a68dc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "tourner",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "513833d9-d91e-48ec-96b9-92c7f55fa1ad",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "tourner",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "23baf08e-316e-4f27-8833-61f89eaa9d33",
+                    "path": "<Gamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "tourner",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a25724c2-3b21-4e0f-978a-091d84bf86d8",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "tourelle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
