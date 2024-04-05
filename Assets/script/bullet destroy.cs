@@ -21,4 +21,15 @@ public class bulletdestroy : MonoBehaviour
             Object.Destroy(this.gameObject);
         }
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("coco" + collision.gameObject.name);
+        Target target = collision.gameObject.GetComponent<Target>();
+        if (target != null)
+        {
+            target.TakeDamage();
+            Destroy(gameObject); 
+        }
+    }
 }
