@@ -1,30 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Constraints;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] float remainingTime;
+    [SerializeField] private GameObject gameOverPanel; // Référence au panneau Game Over dans l'éditeur Unity
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private float remainingTime;
+    private bool isGameOver = false;
+
     void Update()
     {
-        if (remainingTime > 0)
+        if (!isGameOver && remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
+            UpdateTimerUI();
         }
-        else if (remainingTime < 0)
+        else if (!isGameOver && remainingTime <= 0)
         {
-            remainingTime = 1;
-            // GameOver();
-            timerText.color = Color.red;
+            remainingTime = 0;
+            isGameOver = true;
+            ShowGameOverPanel();
         }
-        remainingTime -= Time.deltaTime;
+    }
+
+    void UpdateTimerUI()
+    {
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void ShowGameOverPanel()
+    {
+        gameOverPanel.SetActive(true); // Affiche le panneau Game Over
+        Time.timeScale = 0; // Met en pause le jeu
     }
 
     public void Pause()
@@ -32,10 +44,10 @@ public class Timer : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
-
     public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
 }
+

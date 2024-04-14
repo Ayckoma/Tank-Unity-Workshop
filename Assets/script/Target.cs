@@ -12,6 +12,8 @@ public class Target : MonoBehaviour
     public Vector3 sceneMaxLimit; // Limite maximale de la scène
     public Camera mainCamera;
 
+
+
     void Start()
     {
         // Récupérer les limites de la scène en utilisant le viewport de la caméra principale
@@ -34,6 +36,7 @@ public class Target : MonoBehaviour
             
             Destroy(gameObject);
             SpawnNewTarget(); // Appeler la méthode de génération de cible
+            
         }
     }
 
@@ -45,23 +48,6 @@ public class Target : MonoBehaviour
                     float z= Random.Range(SpawnArea.bounds.min.z, SpawnArea.bounds.max.z);
                     Instantiate(targetPrefab, new Vector3(x,0,z), Quaternion.identity);
         }
-        
-        
-
-
-
-        /*// Choisir un point de spawn aléatoire à l'intérieur des limites de la scène
-        Vector3 randomSpawnPoint = new Vector2(Random.Range(0, 1920), Random.Range(0, 1080));
-        RaycastHit hit;
-        Ray ray = mainCamera.ScreenPointToRay(randomSpawnPoint);
-
-        if (Physics.Raycast(ray, out hit)) {
-//là tu fais spawn ton épouventaille et pour la position tu utilises hit.position
-            Instantiate(targetPrefab,hit.transform, true);
-            // Do something with the object that was hit by the raycast.
-
-
-        }*/
 
     }
 }
