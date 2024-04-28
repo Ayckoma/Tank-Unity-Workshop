@@ -2750,10 +2750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465f89b45fa5498499846a4d197d2007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  highscoreText: {fileID: 0}
-  score: 0
-  highscore: 0
 --- !u!114 &993261355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a3c2118ae8fcc42948c91b6df346e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
 --- !u!1001 &996611539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3908,7 +3903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e453c691dfb93a7478401a9482eed8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
 --- !u!1001 &1431564851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5631,7 +5625,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2066768268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 671546188}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Options
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2066768268
 MonoBehaviour:
   m_ObjectHideFlags: 0
